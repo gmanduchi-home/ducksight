@@ -1,0 +1,92 @@
+{
+  "Meta": {
+    "title": "The Duck Sight Studio — Videomaker | Creazione video & Video editing",
+    "description": "Videomaker e creazione video tra Cesena, Rimini, Pesaro, Ravenna e Bologna. Documentari, storytelling e video editing di Giulia Repetto — The Duck Sight Studio.",
+    "keywords": "videomaker, creazione video, video editing, videomaker Cesena, videomaker Rimini, videomaker Pesaro, videomaker Ravenna, videomaker Bologna, documentari, storytelling video, Giulia Repetto"
+  },
+  "Nav": {
+    "home": "Home",
+    "work": "Progetti",
+    "videos": "Visioni",
+    "voice": "Voce",
+    "about": "Studio",
+    "services": "Servizi",
+    "contact": "Contatti"
+  },
+  "Hero": {
+    "eyebrow": "Videomaker · Visual storyteller · Voice creator",
+    "title": "Storie che meritano",
+    "titleAccent": "di essere viste due volte.",
+    "lede": "Creazione video, video editing e ricerca narrativa tra Romagna e Marche. Di Giulia Repetto — The Duck Sight Studio.",
+    "ctaWork": "Sfoglia i progetti",
+    "ctaContact": "Iniziamo a parlare"
+  },
+  "Stories": {
+    "eyebrow": "Portfolio",
+    "title": "Portfolio",
+    "subtitle": "Una piccola raccolta di lavori. Clicca su un progetto per sfogliare la gallery completa."
+  },
+  "Videos": {
+    "eyebrow": "Visioni",
+    "title": "Visioni in movimento",
+    "subtitle": "Storie raccontate in immagini in movimento. Frammenti, atmosfere, ritmi diversi — una collezione di progetti video originali.",
+    "emptyState": "I video stanno arrivando. Nel frattempo dai un'occhiata al canale YouTube.",
+    "ctaChannel": "Esplora il canale"
+  },
+  "Services": {
+    "eyebrow": "Servizi",
+    "title": "Cosa faccio",
+    "subtitle": "Tre modi per raccontare la stessa cosa: con calma, con cura, con un punto di vista.",
+    "items": {
+      "videomaking": {
+        "title": "Videomaking & creazione video",
+        "body": "Documentari, ritratti, brand stories. Dalla pre-produzione all'export finale: ricerca, riprese, montaggio."
+      },
+      "editing": {
+        "title": "Video editing",
+        "body": "Montaggio narrativo, color grading, sound design. Lavoro anche su materiale già girato che ha bisogno di una seconda voce."
+      },
+      "voice": {
+        "title": "Voce & on-camera",
+        "body": "Voce narrante per documentari, podcast e contenuti. Presenza on-camera per interviste, conduzione e formati ibridi."
+      }
+    }
+  },
+  "Areas": {
+    "eyebrow": "Dove lavoro",
+    "title": "Tra Romagna e Marche",
+    "subtitle": "Videomaker freelance basata in Romagna, operativa in tutta la zona costiera adriatica. Disponibile per trasferte in tutta Italia.",
+    "cities": ["Cesena", "Rimini", "Pesaro", "Ravenna", "Bologna"]
+  },
+  "About": {
+    "eyebrow": "Lo studio",
+    "title": "The Duck Sight Studio",
+    "body": "Mi chiamo Giulia Repetto. Faccio video, ricerca narrativa, voce. Lavoro su documentari e storie che hanno bisogno di tempo per essere ascoltate prima ancora che guardate. Sono una videomaker freelance attiva tra Cesena, Rimini, Pesaro, Ravenna e Bologna.",
+    "cta": "Conosci lo studio"
+  },
+  "Contact": {
+    "eyebrow": "Contatti",
+    "title": "Hai un progetto in mente?",
+    "body": "Raccontami la tua idea — anche solo per capire insieme cosa può diventare. Rispondo entro 24 ore.",
+    "ctaPhone": "Chiama ora",
+    "ctaEmail": "Scrivimi",
+    "phoneNote": "Disponibile lun–ven, 9:00–19:00"
+  },
+  "Footer": {
+    "tagline": "Videomaker · Visual storyteller · Voice creator",
+    "areas": "Operativa tra Cesena, Rimini, Pesaro, Ravenna e Bologna",
+    "rights": "Tutti i diritti riservati.",
+    "madeWith": "Realizzato con cura."
+  },
+  "Gallery": {
+    "close": "Chiudi",
+    "prev": "Precedente",
+    "next": "Successiva",
+    "counter": "{current} di {total}"
+  },
+  "LanguageSwitcher": {
+    "label": "Lingua",
+    "it": "Italiano",
+    "en": "English"
+  }
+}

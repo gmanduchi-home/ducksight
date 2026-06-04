@@ -1,0 +1,92 @@
+{
+  "Meta": {
+    "title": "The Duck Sight Studio — Videomaker · Video creation & editing",
+    "description": "Videomaker and video creation across Emilia-Romagna and Marche, Italy. Documentaries, storytelling and video editing by Giulia Repetto — The Duck Sight Studio.",
+    "keywords": "videomaker, video creation, video editing, documentary filmmaker Italy, visual storyteller, Giulia Repetto"
+  },
+  "Nav": {
+    "home": "Home",
+    "work": "Projects",
+    "videos": "Visions",
+    "voice": "Voice",
+    "about": "Studio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "eyebrow": "Videomaker · Visual storyteller · Voice creator",
+    "title": "Stories worth watching",
+    "titleAccent": "twice.",
+    "lede": "Video creation, editing and narrative research across Emilia-Romagna and Marche, Italy. By Giulia Repetto — The Duck Sight Studio.",
+    "ctaWork": "Browse the projects",
+    "ctaContact": "Let's talk"
+  },
+  "Stories": {
+    "eyebrow": "Portfolio",
+    "title": "Portfolio",
+    "subtitle": "A small collection of work. Click on any project to browse its full gallery."
+  },
+  "Videos": {
+    "eyebrow": "Visions",
+    "title": "Visions in motion",
+    "subtitle": "Stories told through moving images. Fragments, atmospheres, different rhythms — a collection of original video projects.",
+    "emptyState": "Videos are on the way. In the meantime, take a look at the channel.",
+    "ctaChannel": "Explore the channel"
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "What I do",
+    "subtitle": "Three ways to tell the same thing: with calm, with care, with a point of view.",
+    "items": {
+      "videomaking": {
+        "title": "Videomaking & video creation",
+        "body": "Documentaries, portraits, brand stories. From pre-production to final export: research, shooting, editing."
+      },
+      "editing": {
+        "title": "Video editing",
+        "body": "Narrative editing, color grading, sound design. I also work on footage that needs a second voice."
+      },
+      "voice": {
+        "title": "Voice & on-camera",
+        "body": "Narration for documentaries, podcasts and content. On-camera presence for interviews, hosting and hybrid formats."
+      }
+    }
+  },
+  "Areas": {
+    "eyebrow": "Where I work",
+    "title": "Emilia-Romagna & Marche, Italy",
+    "subtitle": "Freelance videomaker based in Romagna, working along the Adriatic coast. Available for travel across Italy and abroad.",
+    "cities": ["Cesena", "Rimini", "Pesaro", "Ravenna", "Bologna"]
+  },
+  "About": {
+    "eyebrow": "The studio",
+    "title": "The Duck Sight Studio",
+    "body": "I'm Giulia Repetto. I make videos, narrative research, voice. I work on documentaries and stories that need time to be heard before they are seen. A freelance videomaker working across Cesena, Rimini, Pesaro, Ravenna and Bologna.",
+    "cta": "About the studio"
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Got a project in mind?",
+    "body": "Tell me your idea — even just to figure out together what it could become. I reply within 24 hours.",
+    "ctaPhone": "Call now",
+    "ctaEmail": "Write me",
+    "phoneNote": "Available Mon–Fri, 9:00–19:00 CET"
+  },
+  "Footer": {
+    "tagline": "Videomaker · Visual storyteller · Voice creator",
+    "areas": "Working across Cesena, Rimini, Pesaro, Ravenna and Bologna",
+    "rights": "All rights reserved.",
+    "madeWith": "Crafted with care."
+  },
+  "Gallery": {
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next",
+    "counter": "{current} of {total}"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "it": "Italiano",
+    "en": "English"
+  }
+}
