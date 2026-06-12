@@ -1,7 +1,7 @@
 # The Duck Sight Studio
 
 Sito vetrina di **Giulia Repetto** — videomaker, visual storyteller, voice creator.
-Dominio: [theducksight.studio](https://theducksight.studio)
+Dominio: [theducksightstudio.it](https://theducksightstudio.it)
 
 ## Stack
 
@@ -68,7 +68,7 @@ tools/optimize-images.mjs           # script resize foto in-place
 
 - Pannello admin: `/studio` (in dev: http://localhost:3000/studio)
 - Login con account Sanity (gestione su https://www.sanity.io/manage)
-- **Importante**: aggiungere `http://localhost:3000` e `https://theducksight.studio` come **CORS origins** sul progetto Sanity
+- **Importante**: aggiungere `http://localhost:3000` e `https://theducksightstudio.it` come **CORS origins** sul progetto Sanity
 - Tipi documento: `siteSettings` (singleton), `project`, `video`, `service`
 - Tutti i campi testuali sono bilingue (oggetto `{ it, en }`)
 - Quando Sanity è popolato, sostituisce i fallback statici di `src/data/`
@@ -87,7 +87,7 @@ npm exec sanity deploy
 1. **Repo Git** (GitHub/GitLab) — push del codice
 2. **Vercel** → Add New Project → seleziona repo
 3. **Environment variables** → copia i 3 valori `NEXT_PUBLIC_SANITY_*`
-4. **Dominio custom** su Vercel → `theducksight.studio`
+4. **Dominio custom** su Vercel → `theducksightstudio.it`
 5. **DNS Aruba** (admin.aruba.it → Domini → DNS):
    - Record `A` su `@` → `76.76.21.21`
    - Record `CNAME` su `www` → `cname.vercel-dns.com`
