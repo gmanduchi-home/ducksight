@@ -39,7 +39,7 @@ export const siteSettingsSchema = defineType({
       name: "email",
       title: "Email di contatto",
       type: "string",
-      initialValue: "hello@theducksightstudio.it",
+      initialValue: "info@theducksightstudio.it",
     }),
     defineField({
       name: "instagram",

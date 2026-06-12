@@ -2,7 +2,7 @@ export const siteConfig = {
   domain: "https://theducksightstudio.it",
   brandName: "The Duck Sight Studio",
   ownerName: "Giulia Repetto",
-  email: "hello@theducksightstudio.it",
+  email: "info@theducksightstudio.it",
   /** Numero in formato internazionale (per tel: link) e formato display (con spazi). */
   phone: {
     intl: "+393331929673",
