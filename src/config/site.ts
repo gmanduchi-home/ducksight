@@ -10,6 +10,8 @@ export const siteConfig = {
   },
   /** Link diretto a chat WhatsApp Business — formato wa.me senza "+" e senza spazi. */
   whatsapp: "https://wa.me/393331929673",
+  /** Google tag (gtag.js) — Google Ads conversion tracking. Mettere null per disabilitare. */
+  googleTagId: "AW-18233564262" as string | null,
   social: {
     instagram: "https://www.instagram.com/theducksight.studio/",
     linktree: "https://linktr.ee/theducksight.studio",

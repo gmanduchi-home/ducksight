@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { GoogleTag } from "@/components/GoogleTag";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -96,6 +97,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider>
+      <GoogleTag />
       <JsonLd locale={locale as "it" | "en"} />
       <div className="flex min-h-dvh flex-col">
         <Header />
