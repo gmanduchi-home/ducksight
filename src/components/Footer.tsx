@@ -1,6 +1,9 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { DuckLogo } from "./DuckLogo";
 import { siteConfig } from "@/config/site";
+import { trackContactClick } from "@/lib/track-contact";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -28,6 +31,7 @@ export function Footer() {
           <div className="flex flex-wrap gap-5 md:justify-end">
             <a
               href={`tel:${siteConfig.phone.intl}`}
+              onClick={trackContactClick(`tel:${siteConfig.phone.intl}`)}
               className="hover:text-teal"
             >
               {siteConfig.phone.display}
@@ -36,12 +40,14 @@ export function Footer() {
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackContactClick(siteConfig.whatsapp, { newTab: true })}
               className="hover:text-teal"
             >
               WhatsApp
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
+              onClick={trackContactClick(`mailto:${siteConfig.email}`)}
               className="hover:text-teal"
             >
               Email
@@ -50,6 +56,7 @@ export function Footer() {
               href={siteConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackContactClick(siteConfig.social.instagram, { newTab: true })}
               className="hover:text-teal"
             >
               Instagram
@@ -58,6 +65,7 @@ export function Footer() {
               href={siteConfig.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackContactClick(siteConfig.social.youtube, { newTab: true })}
               className="hover:text-teal"
             >
               YouTube
@@ -66,6 +74,7 @@ export function Footer() {
               href={siteConfig.social.linktree}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackContactClick(siteConfig.social.linktree, { newTab: true })}
               className="hover:text-teal"
             >
               Linktree
