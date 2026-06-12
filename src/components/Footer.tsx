@@ -33,6 +33,14 @@ export function Footer() {
               {siteConfig.phone.display}
             </a>
             <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-teal"
+            >
+              WhatsApp
+            </a>
+            <a
               href={`mailto:${siteConfig.email}`}
               className="hover:text-teal"
             >

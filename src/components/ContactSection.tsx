@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Phone, Mail, Camera, Link as LinkIcon } from "lucide-react";
+import { Phone, MessageCircle, Mail, Camera, Link as LinkIcon } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export function ContactSection() {
@@ -18,11 +18,11 @@ export function ContactSection() {
           {t("body")}
         </p>
 
-        {/* CTA primaria: telefono — il modo più diretto per conversione */}
-        <div className="mt-10 md:mt-12">
+        {/* CTA primarie: telefono + WhatsApp — affiancate su desktop, stack su mobile */}
+        <div className="mt-10 flex flex-col items-stretch justify-center gap-3 md:mt-12 md:flex-row md:items-center md:gap-4">
           <a
             href={`tel:${siteConfig.phone.intl}`}
-            className="inline-flex items-center gap-3 rounded-full bg-teal px-7 py-4 text-base font-medium text-cream shadow-lg shadow-teal/20 transition-all hover:-translate-y-0.5 hover:bg-teal-dark md:text-lg"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-teal px-7 py-4 text-base font-medium text-cream shadow-lg shadow-teal/20 transition-all hover:-translate-y-0.5 hover:bg-teal-dark md:text-lg"
           >
             <Phone className="h-5 w-5" strokeWidth={2} />
             <span>
@@ -32,12 +32,22 @@ export function ContactSection() {
               </span>
             </span>
           </a>
-          <div className="mt-3 text-xs text-ink/55 md:hidden">
-            {siteConfig.phone.display}
-          </div>
-          <div className="mt-3 text-xs uppercase tracking-wider text-ink/50">
-            {t("phoneNote")}
-          </div>
+          <a
+            href={siteConfig.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-7 py-4 text-base font-medium text-white shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-0.5 hover:bg-[#1FB957] md:text-lg"
+          >
+            <MessageCircle className="h-5 w-5" strokeWidth={2} />
+            {t("ctaWhatsapp")}
+          </a>
+        </div>
+
+        <div className="mt-3 text-xs text-ink/55 md:hidden">
+          {siteConfig.phone.display}
+        </div>
+        <div className="mt-3 text-xs uppercase tracking-wider text-ink/50">
+          {t("phoneNote")}
         </div>
 
         {/* CTA secondarie */}

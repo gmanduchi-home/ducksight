@@ -8,6 +8,8 @@ export const siteConfig = {
     intl: "+393331929673",
     display: "+39 333 192 9673",
   },
+  /** Link diretto a chat WhatsApp Business — formato wa.me senza "+" e senza spazi. */
+  whatsapp: "https://wa.me/393331929673",
   social: {
     instagram: "https://www.instagram.com/theducksight.studio/",
     linktree: "https://linktr.ee/theducksight.studio",
