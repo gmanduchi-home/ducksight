@@ -31,7 +31,7 @@ export function Footer() {
           <div className="flex flex-wrap gap-5 md:justify-end">
             <a
               href={`tel:${siteConfig.phone.intl}`}
-              onClick={trackContactClick(`tel:${siteConfig.phone.intl}`)}
+              onClick={trackContactClick(`tel:${siteConfig.phone.intl}`, { reportConversion: true })}
               className="hover:text-teal"
             >
               {siteConfig.phone.display}
@@ -40,14 +40,14 @@ export function Footer() {
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackContactClick(siteConfig.whatsapp, { newTab: true })}
+              onClick={trackContactClick(siteConfig.whatsapp, { newTab: true, reportConversion: true })}
               className="hover:text-teal"
             >
               WhatsApp
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
-              onClick={trackContactClick(`mailto:${siteConfig.email}`)}
+              onClick={trackContactClick(`mailto:${siteConfig.email}`, { reportConversion: true })}
               className="hover:text-teal"
             >
               Email

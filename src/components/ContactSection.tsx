@@ -25,7 +25,7 @@ export function ContactSection() {
         <div className="mt-10 flex flex-col items-stretch justify-center gap-3 md:mt-12 md:flex-row md:items-center md:gap-4">
           <a
             href={`tel:${siteConfig.phone.intl}`}
-            onClick={trackContactClick(`tel:${siteConfig.phone.intl}`)}
+            onClick={trackContactClick(`tel:${siteConfig.phone.intl}`, { reportConversion: true })}
             className="inline-flex items-center justify-center gap-3 rounded-full bg-teal px-7 py-4 text-base font-medium text-cream shadow-lg shadow-teal/20 transition-all hover:-translate-y-0.5 hover:bg-teal-dark md:text-lg"
           >
             <Phone className="h-5 w-5" strokeWidth={2} />
@@ -40,7 +40,7 @@ export function ContactSection() {
             href={siteConfig.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackContactClick(siteConfig.whatsapp, { newTab: true })}
+            onClick={trackContactClick(siteConfig.whatsapp, { newTab: true, reportConversion: true })}
             className="inline-flex items-center justify-center gap-3 rounded-full bg-[#25D366] px-7 py-4 text-base font-medium text-white shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-0.5 hover:bg-[#1FB957] md:text-lg"
           >
             <MessageCircle className="h-5 w-5" strokeWidth={2} />
@@ -59,7 +59,7 @@ export function ContactSection() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 md:flex-row md:gap-4">
           <a
             href={`mailto:${siteConfig.email}`}
-            onClick={trackContactClick(`mailto:${siteConfig.email}`)}
+            onClick={trackContactClick(`mailto:${siteConfig.email}`, { reportConversion: true })}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink/40 hover:bg-ink/5 md:w-auto"
           >
             <Mail className="h-4 w-4" />
