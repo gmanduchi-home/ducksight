@@ -42,7 +42,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-xs uppercase tracking-[0.3em] text-teal md:text-sm"
+          className="text-[1.05rem] uppercase tracking-[0.3em] text-teal"
         >
           {t("eyebrow")}
         </motion.p>

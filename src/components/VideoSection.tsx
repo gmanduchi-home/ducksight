@@ -22,7 +22,7 @@ export function VideoSection({ videos: fromCMS }: Props) {
     return (
       <section id="videos" className="relative bg-cream-50 py-20 md:py-32">
         <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="text-[1.05rem] uppercase tracking-[0.3em] text-teal">
             {t("eyebrow")}
           </p>
           <h2 className="font-display mt-3 text-4xl leading-[1.05] text-ink md:text-5xl">
@@ -50,7 +50,7 @@ export function VideoSection({ videos: fromCMS }: Props) {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-12">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-teal">
+            <p className="text-[1.05rem] uppercase tracking-[0.3em] text-teal">
               {t("eyebrow")}
             </p>
             <h2 className="font-display mt-3 text-4xl leading-[1.05] text-ink md:text-6xl">

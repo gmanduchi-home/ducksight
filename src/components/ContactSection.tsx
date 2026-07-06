@@ -11,7 +11,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative bg-cream py-20 md:py-32">
       <div className="mx-auto max-w-5xl px-5 text-center md:px-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-teal">
+        <p className="text-[1.05rem] uppercase tracking-[0.3em] text-teal">
           {t("eyebrow")}
         </p>
         <h2 className="font-display mt-3 text-4xl leading-[1.05] text-ink md:text-7xl">

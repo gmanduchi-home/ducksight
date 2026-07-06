@@ -26,7 +26,7 @@ export function AboutSection() {
         </div>
 
         <div className="md:col-span-7 md:pt-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-beak-light">
+          <p className="text-[1.05rem] uppercase tracking-[0.3em] text-beak-light">
             {t("eyebrow")}
           </p>
           <h2 className="font-display mt-3 text-4xl leading-[1.05] md:text-6xl">

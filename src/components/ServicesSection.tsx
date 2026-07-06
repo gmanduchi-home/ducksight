@@ -14,7 +14,7 @@ export function ServicesSection() {
     <section id="services" className="relative bg-cream-50 py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-teal">
+          <p className="text-[1.05rem] uppercase tracking-[0.3em] text-teal">
             {t("eyebrow")}
           </p>
           <h2 className="font-display mt-3 text-4xl leading-[1.05] text-ink md:text-6xl">
