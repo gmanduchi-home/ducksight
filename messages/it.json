@@ -39,12 +39,12 @@
     "subtitle": "Per raccontare storie si inizia scrivendo; a me piace integrare con immagini e suoni.",
     "items": {
       "videomaking": {
-        "title": "Videomaking & creazione video",
-        "body": "Documentari, ritratti, brand stories. Dalla pre-produzione all'export finale: ricerca, riprese, montaggio."
+        "title": "Videomaking e editing video",
+        "body": "Creazione video, documentari, ritratti, brand stories. Dalla pre-produzione, al video editing, all'export finale: ricerca, riprese, editing e montaggio."
       },
-      "editing": {
-        "title": "Video editing",
-        "body": "Montaggio narrativo, color grading, sound design. Lavoro anche su materiale già girato che ha bisogno di una seconda voce."
+      "research": {
+        "title": "Ricerca narrativa",
+        "body": "Studio, concept, scrittura, immagini, musica: lo storytelling come linea guida per creare i vostri contenuti. Ogni storia ha un suo modo per essere raccontata."
       },
       "voice": {
         "title": "Voce & on-camera",

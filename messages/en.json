@@ -39,12 +39,12 @@
     "subtitle": "To tell stories you start by writing; I like to weave in images and sound.",
     "items": {
       "videomaking": {
-        "title": "Videomaking & video creation",
-        "body": "Documentaries, portraits, brand stories. From pre-production to final export: research, shooting, editing."
+        "title": "Videomaking & video editing",
+        "body": "Video creation, documentaries, portraits, brand stories. From pre-production to video editing to final export: research, shooting, editing and post."
       },
-      "editing": {
-        "title": "Video editing",
-        "body": "Narrative editing, color grading, sound design. I also work on footage that needs a second voice."
+      "research": {
+        "title": "Narrative research",
+        "body": "Study, concept, writing, images, music: storytelling as the guiding thread to shape your content. Every story has its own way of being told."
       },
       "voice": {
         "title": "Voice & on-camera",

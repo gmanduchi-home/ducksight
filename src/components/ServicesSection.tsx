@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
-import { Film, Scissors, Mic } from "lucide-react";
+import { Film, BookOpen, Mic } from "lucide-react";
 
 const services = [
   { key: "videomaking", Icon: Film },
-  { key: "editing", Icon: Scissors },
+  { key: "research", Icon: BookOpen },
   { key: "voice", Icon: Mic },
 ] as const;
 
