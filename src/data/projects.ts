@@ -18,8 +18,8 @@ export const projects: Project[] = [
     category: { it: "Brand · Birra artigianale", en: "Brand · Craft beer" },
     title: { it: "Alchemist Ale", en: "Alchemist Ale" },
     excerpt: {
-      it: "Reportage di una serata in birreria: lattine illustrate, spillatura, mani. Una storia di simboli e calore.",
-      en: "An evening at the brewery: illustrated cans, taps, hands. A story of symbols and warmth.",
+      it: "Un racconto di festa, schiume artigianali ed etichette illustrate.",
+      en: "A story of a festive night, craft foams and illustrated labels.",
     },
     cover: "/projects/alchemist-ale/PANG8168.webp",
     gallery: [
@@ -44,8 +44,8 @@ export const projects: Project[] = [
     category: { it: "Ritratto · Maternity", en: "Portrait · Maternity" },
     title: { it: "L'attesa", en: "The wait" },
     excerpt: {
-      it: "Un servizio maternity nel campo, all'ora dorata. Il tempo che si dilata mentre la luce si abbassa.",
-      en: "A maternity shoot in the field at golden hour. Time stretching while the light goes low.",
+      it: "Un prato fiorito, un tramonto primaverile e la bellezza di un momento genuinamente intimo.",
+      en: "A flowering meadow, a spring sunset and the beauty of a genuinely intimate moment.",
     },
     cover: "/projects/maternity/PANG8454.webp",
     gallery: [
@@ -71,10 +71,10 @@ export const projects: Project[] = [
     slug: "outdoor",
     year: 2025,
     category: { it: "Paesaggio · Outdoor", en: "Landscape · Outdoor" },
-    title: { it: "Strada di campagna", en: "Country road" },
+    title: { it: "Nella campagna", en: "In the countryside" },
     excerpt: {
-      it: "Una strada bianca al mattino tardo. Quello che la luce d'autunno riesce ancora a raccontare.",
-      en: "A white road in late morning. What autumn light can still tell.",
+      it: "Sguardi durante una passeggiata: quello che la luce d'autunno riesce a raccontare.",
+      en: "Glances along a walk: what autumn light can still tell.",
     },
     cover: "/projects/outdoor/PANG7409_mod.webp",
     gallery: [
