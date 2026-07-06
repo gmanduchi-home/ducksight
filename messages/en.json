@@ -7,7 +7,7 @@
   "Nav": {
     "home": "Home",
     "videos": "Portfolio",
-    "work": "Photos",
+    "work": "Moments",
     "voice": "Voice",
     "about": "Studio",
     "services": "Services",
@@ -22,8 +22,8 @@
     "ctaContact": "Let's talk"
   },
   "Stories": {
-    "eyebrow": "Photography",
-    "title": "Selected shots",
+    "eyebrow": "Moments",
+    "title": "Moments",
     "subtitle": "A small collection of stills. Click on any set to browse its full gallery."
   },
   "Videos": {
