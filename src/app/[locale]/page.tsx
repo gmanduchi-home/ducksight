@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/Hero";
-import { ProjectGrid } from "@/components/ProjectGrid";
 import { VideoSection } from "@/components/VideoSection";
+import { ProjectGrid } from "@/components/ProjectGrid";
 import { ServicesSection } from "@/components/ServicesSection";
 import { AreasSection } from "@/components/AreasSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -20,8 +20,10 @@ export default async function HomePage({
   return (
     <>
       <Hero />
-      <ProjectGrid />
+      {/* Portfolio (video) — sezione più importante, subito dopo l'Hero */}
       <VideoSection videos={videos} />
+      {/* Foto selezionate */}
+      <ProjectGrid />
       <ServicesSection />
       <AreasSection />
       <AboutSection />

@@ -8,8 +8,8 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { DuckLogo } from "./DuckLogo";
 
 const navItems = [
-  { key: "work", href: "/#work" },
   { key: "videos", href: "/#videos" },
+  { key: "work", href: "/#work" },
   { key: "services", href: "/#services" },
   { key: "about", href: "/#about" },
   { key: "contact", href: "/#contact" },

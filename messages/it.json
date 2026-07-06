@@ -6,8 +6,8 @@
   },
   "Nav": {
     "home": "Home",
-    "work": "Progetti",
-    "videos": "Visioni",
+    "videos": "Portfolio",
+    "work": "Foto",
     "voice": "Voce",
     "about": "Studio",
     "services": "Servizi",
@@ -22,13 +22,13 @@
     "ctaContact": "Iniziamo a parlare"
   },
   "Stories": {
-    "eyebrow": "Portfolio",
-    "title": "Portfolio",
-    "subtitle": "Una piccola raccolta di lavori. Clicca su un progetto per sfogliare la gallery completa."
+    "eyebrow": "Scatti",
+    "title": "Foto selezionate",
+    "subtitle": "Una piccola raccolta di scatti. Clicca su una foto per sfogliare la gallery completa."
   },
   "Videos": {
-    "eyebrow": "Visioni",
-    "title": "Visioni in movimento",
+    "eyebrow": "Portfolio",
+    "title": "Portfolio",
     "subtitle": "Storie raccontate in immagini in movimento. Frammenti, atmosfere, ritmi diversi — una collezione di progetti video originali.",
     "emptyState": "I video stanno arrivando. Nel frattempo dai un'occhiata al canale YouTube.",
     "ctaChannel": "Esplora il canale"

@@ -71,7 +71,7 @@ export function VideoSection({ videos: fromCMS }: Props) {
           </a>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2 md:gap-8">
           {list.map((v, i) => (
             <VideoCard key={v.youtubeId} video={v} index={i} locale={locale} />
           ))}
