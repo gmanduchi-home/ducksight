@@ -43,4 +43,31 @@ export const videos: Video[] = [
     },
     year: 2026,
   },
+  {
+    youtubeId: "s22AN8f8h9M",
+    type: "video",
+    title: {
+      it: "Achille Marozzo — Dallo studio alla spada",
+      en: "Achille Marozzo — From the study to the sword",
+    },
+    year: 2026,
+  },
+  {
+    youtubeId: "ZxzTQr2dVPQ",
+    type: "video",
+    title: {
+      it: "Showfight — On-camera presenter",
+      en: "Showfight — On-camera presenter",
+    },
+    year: 2026,
+  },
+  {
+    youtubeId: "Tpia217fqO4",
+    type: "video",
+    title: {
+      it: "Making of Short Movie",
+      en: "Making of Short Movie",
+    },
+    year: 2026,
+  },
 ];
