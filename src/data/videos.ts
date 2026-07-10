@@ -6,6 +6,11 @@ export type Video = {
   title: { it: string; en: string };
   /** Anno opzionale per ordinamento / display. */
   year?: number;
+  /**
+   * Path opzionale a un poster/copertina custom (in /public).
+   * Se assente, si usa la thumbnail automatica di YouTube (i.ytimg.com/vi/…).
+   */
+  poster?: string;
 };
 
 /**
@@ -24,6 +29,7 @@ export const videos: Video[] = [
       en: "FOGGY — When the noise of the mind dissolves into the silence of nature",
     },
     year: 2026,
+    poster: "/covers/foggy.webp",
   },
   {
     youtubeId: "I7iuIhDiiCM",
@@ -33,6 +39,7 @@ export const videos: Video[] = [
       en: "Making a Stage Fencing Show — Behind the scenes of the Pendragon Stage Fighters",
     },
     year: 2026,
+    poster: "/covers/pendragon.webp",
   },
   {
     youtubeId: "RdwguYNewqQ",
@@ -42,6 +49,7 @@ export const videos: Video[] = [
       en: "Alchemist Ale Fest — Mamma Mia Café, Imola",
     },
     year: 2026,
+    poster: "/covers/alchemist.webp",
   },
   {
     youtubeId: "s22AN8f8h9M",
@@ -51,6 +59,7 @@ export const videos: Video[] = [
       en: "Achille Marozzo — From the study to the sword",
     },
     year: 2026,
+    poster: "/covers/achille-marozzo.webp",
   },
   {
     youtubeId: "ZxzTQr2dVPQ",
@@ -60,6 +69,7 @@ export const videos: Video[] = [
       en: "Showfight — On-camera presenter",
     },
     year: 2026,
+    poster: "/covers/showfight.webp",
   },
   {
     youtubeId: "Tpia217fqO4",
@@ -69,5 +79,6 @@ export const videos: Video[] = [
       en: "Making of Short Movie",
     },
     year: 2026,
+    poster: "/covers/making-of.webp",
   },
 ];

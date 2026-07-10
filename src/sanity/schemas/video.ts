@@ -18,6 +18,14 @@ export const videoSchema = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "poster",
+      title: "Cover custom (opzionale)",
+      type: "image",
+      description:
+        "Se caricata, viene usata al posto della thumbnail automatica di YouTube.",
+      options: { hotspot: true },
+    }),
+    defineField({
       name: "type",
       title: "Formato",
       type: "string",

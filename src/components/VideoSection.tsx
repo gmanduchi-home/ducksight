@@ -95,8 +95,12 @@ function VideoCard({
   const [activated, setActivated] = useState(false);
 
   const aspect = video.type === "short" ? "aspect-[9/16]" : "aspect-video";
-  // Thumbnail YouTube: maxresdefault è la migliore, fallback a hqdefault se serve
-  const thumb = `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`;
+  // Cover custom (poster) se presente, altrimenti thumbnail automatica YouTube.
+  const thumb =
+    video.poster && video.poster.startsWith("/")
+      ? video.poster
+      : `https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`;
+  const isCustomPoster = !!video.poster && video.poster.startsWith("/");
   const embedUrl = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0`;
 
   return (
@@ -129,9 +133,9 @@ function VideoCard({
               src={thumb}
               alt={video.title[locale]}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
-              unoptimized
+              unoptimized={!isCustomPoster}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center">
