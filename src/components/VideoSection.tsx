@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Play, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { videos as fallbackVideos, type Video } from "@/data/videos";
 
@@ -137,12 +137,6 @@ function VideoCard({
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               unoptimized={!isCustomPoster}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cream/95 text-ink shadow-2xl transition-transform group-hover:scale-110">
-                <Play className="h-7 w-7 translate-x-0.5 fill-current" />
-              </div>
-            </div>
           </button>
         )}
       </div>
