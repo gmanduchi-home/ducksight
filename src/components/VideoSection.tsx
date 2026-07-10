@@ -140,16 +140,9 @@ function VideoCard({
           </button>
         )}
       </div>
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="font-display text-lg leading-tight text-ink md:text-xl">
-          {video.title[locale]}
-        </h3>
-        {video.year && (
-          <span className="shrink-0 text-xs uppercase tracking-wider text-ink/55">
-            {video.year}
-          </span>
-        )}
-      </div>
+      <h3 className="font-display text-lg leading-tight text-ink md:text-xl">
+        {video.title[locale]}
+      </h3>
     </motion.article>
   );
 }
