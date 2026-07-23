@@ -5,13 +5,31 @@ import type { MouseEvent } from "react";
 /** Evento conversion generico Google Ads — sparato su ogni CTA contatto. */
 const EVENT_GENERIC = "ads_conversion_Prenotazione_appuntamen_1";
 
-/** Click-to-call / write conversion specifica — solo tel/email/whatsapp (vale 1 EUR). */
-const EVENT_CONVERSION_SEND_TO = "AW-18233564262/zSweCIWxjL8cEOa4uPZD";
+/**
+ * Conversion Google Ads sparate sui contatti "hot" (tel/whatsapp/email).
+ * L'array è ordinato: la prima è quella storica click-to-call, le successive
+ * sono conversion aggiuntive (nuove campagne Ads, remarketing, ecc.).
+ * L'ULTIMA riceve il callback + timeout per il delayed navigation; le altre
+ * sono fire-and-forget parallel.
+ */
+const CONVERSIONS: Array<Record<string, unknown>> = [
+  {
+    send_to: "AW-18233564262/zSweCIWxjL8cEOa4uPZD",
+    value: 1.0,
+    currency: "EUR",
+  },
+  {
+    send_to: "AW-18233564262/77_7CKWhrdUcEOa4uPZD",
+    value: 1.0,
+    currency: "EUR",
+    transaction_id: "",
+  },
+];
 
 type Options = {
   /** Se true: il link apre in nuova tab (target="_blank") — fire-and-forget eventi. */
   newTab?: boolean;
-  /** Se true: spara anche la click-to-call/contact conversion (vale 1 EUR). */
+  /** Se true: spara anche le conversion click-to-call/contact (vale 1 EUR ciascuna). */
   reportConversion?: boolean;
 };
 
@@ -21,14 +39,15 @@ type Options = {
  *
  * Eventi sparati:
  *  - sempre: `ads_conversion_Prenotazione_appuntamen_1` (generico)
- *  - se reportConversion: anche `conversion` con send_to/value/currency
+ *  - se reportConversion: tutte le conversion in CONVERSIONS[]
  *
  * Navigazione:
- *  - tel: / mailto: / link same-tab → "delayed navigation" (callback gtag o 2s)
- *  - link esterni target=_blank → nuova tab si apre subito, evento fire-and-forget
+ *  - tel: / mailto: / link same-tab → "delayed navigation" (callback sull'ULTIMA
+ *    conversion o 2s timeout — così tutte fanno in tempo a partire)
+ *  - link esterni target=_blank → nuova tab si apre subito, eventi fire-and-forget
  *
  * Fallback se gtag non disponibile (ad-blocker, primo paint): link funziona col
- * suo behavior naturale, evento perso.
+ * suo behavior naturale, eventi persi.
  */
 export function trackContactClick(href: string, opts: Options = {}) {
   return (e: MouseEvent<HTMLAnchorElement>) => {
@@ -41,13 +60,11 @@ export function trackContactClick(href: string, opts: Options = {}) {
 
     if (opts.newTab) {
       // Link esterno con target=_blank: la nuova tab si apre col default behavior.
-      // Sparo l'eventuale conversion in parallelo, senza preventDefault.
+      // Sparo le conversion in parallelo, senza preventDefault.
       if (typeof gtag === "function" && opts.reportConversion) {
-        gtag("event", "conversion", {
-          send_to: EVENT_CONVERSION_SEND_TO,
-          value: 1.0,
-          currency: "EUR",
-        });
+        for (const conv of CONVERSIONS) {
+          gtag("event", "conversion", conv);
+        }
       }
       return;
     }
@@ -63,14 +80,17 @@ export function trackContactClick(href: string, opts: Options = {}) {
     };
 
     if (opts.reportConversion) {
-      // Aspetto la conversion specifica (è quella con value/currency che importa misurare)
-      gtag("event", "conversion", {
-        send_to: EVENT_CONVERSION_SEND_TO,
-        value: 1.0,
-        currency: "EUR",
-        event_callback: navigate,
-        event_timeout: 2000,
-      });
+      // Sparo tutte le conversion, il callback è agganciato all'ULTIMA
+      // (così tutte le altre partono prima e non blocchiamo la nav > 2s).
+      for (let i = 0; i < CONVERSIONS.length; i++) {
+        const isLast = i === CONVERSIONS.length - 1;
+        gtag("event", "conversion", {
+          ...CONVERSIONS[i],
+          ...(isLast
+            ? { event_callback: navigate, event_timeout: 2000 }
+            : {}),
+        });
+      }
     } else {
       // Solo evento generico → uso quello per il delayed nav
       gtag("event", EVENT_GENERIC, {
