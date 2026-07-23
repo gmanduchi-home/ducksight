@@ -69,7 +69,6 @@ export function ContactSection() {
             href={siteConfig.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackContactClick(siteConfig.social.instagram, { newTab: true })}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink/40 hover:bg-ink/5 md:w-auto"
           >
             <Camera className="h-4 w-4" />
@@ -79,7 +78,6 @@ export function ContactSection() {
             href={siteConfig.social.linktree}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackContactClick(siteConfig.social.linktree, { newTab: true })}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink/40 hover:bg-ink/5 md:w-auto"
           >
             <LinkIcon className="h-4 w-4" />

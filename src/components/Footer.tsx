@@ -56,7 +56,6 @@ export function Footer() {
               href={siteConfig.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackContactClick(siteConfig.social.instagram, { newTab: true })}
               className="hover:text-teal"
             >
               Instagram
@@ -65,7 +64,6 @@ export function Footer() {
               href={siteConfig.social.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackContactClick(siteConfig.social.youtube, { newTab: true })}
               className="hover:text-teal"
             >
               YouTube
@@ -74,7 +72,6 @@ export function Footer() {
               href={siteConfig.social.linktree}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackContactClick(siteConfig.social.linktree, { newTab: true })}
               className="hover:text-teal"
             >
               Linktree
