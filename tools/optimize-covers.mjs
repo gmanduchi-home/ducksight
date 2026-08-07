@@ -14,7 +14,9 @@ const QUALITY = 82;
 await mkdir(DST, { recursive: true });
 
 const entries = (await readdir(SRC, { withFileTypes: true }))
-  .filter((e) => e.isFile() && /\.(webp|jpe?g|png)$/i.test(e.name));
+  .filter((e) => e.isFile() && /\.(webp|jpe?g|png)$/i.test(e.name))
+  // Salta i backup delle versioni precedenti (es. pendragon_old.jpeg)
+  .filter((e) => !/_old\b/i.test(e.name));
 
 let totalBefore = 0, totalAfter = 0;
 

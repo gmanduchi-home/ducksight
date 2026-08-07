@@ -22,6 +22,16 @@ export type Video = {
  */
 export const videos: Video[] = [
   {
+    youtubeId: "aG1nt7Euutg",
+    type: "video",
+    title: {
+      it: "Agarthis — Seconda Pelle",
+      en: "Agarthis — Seconda Pelle",
+    },
+    year: 2026,
+    poster: "/covers/aghartis.webp",
+  },
+  {
     youtubeId: "Bi6NN4BxfGQ",
     type: "video",
     title: {
