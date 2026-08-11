@@ -15,6 +15,35 @@ const CONVERSION = {
   currency: "EUR",
 } as const;
 
+/**
+ * True se il device può davvero fare una telefonata.
+ *
+ * Su desktop il click su `tel:` apre Skype/FaceTime e l'utente chiude subito:
+ * conterebbe come conversione senza che nessuna chiamata parta. Il link resta
+ * cliccabile su ogni device — qui decidiamo solo se contarlo come conversione.
+ */
+function canPlaceCall(): boolean {
+  if (typeof window === "undefined" || typeof navigator === "undefined") {
+    return false;
+  }
+
+  if (
+    /Android|iPhone|iPod|Windows Phone|webOS|BlackBerry|Opera Mini|IEMobile/i.test(
+      navigator.userAgent,
+    )
+  ) {
+    return true;
+  }
+
+  // iPad e tablet moderni: si dichiarano desktop nello UA, li riconosciamo
+  // dal puntatore "coarse" (dito) più la presenza di touch.
+  return (
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(pointer: coarse)").matches &&
+    navigator.maxTouchPoints > 0
+  );
+}
+
 type Options = {
   /** Se true: il link apre in nuova tab (target="_blank") — fire-and-forget. */
   newTab?: boolean;
@@ -26,11 +55,13 @@ type Options = {
  * onClick handler che spara la conversion Google Ads quando l'utente clicca
  * un link di contatto (telefono / WhatsApp / email), prima di seguire il link.
  *
- * Navigazione:
- *  - tel: / mailto: (same-tab) → "delayed navigation": naviga sul callback di
+ * Regole:
+ *  - i link `tel:` contano come conversione SOLO da mobile/tablet (vedi
+ *    canPlaceCall) — su desktop il link funziona ma non genera eventi
+ *  - `mailto:` e altri same-tab → "delayed navigation": naviga sul callback di
  *    gtag, con timeout di sicurezza a 2s
- *  - link esterni target=_blank → la nuova tab si apre subito col behavior
- *    nativo (niente popup blocker), evento fire-and-forget
+ *  - link esterni target=_blank (WhatsApp) → la nuova tab si apre subito col
+ *    behavior nativo (niente popup blocker), evento fire-and-forget
  *
  * Fallback se gtag non è disponibile (ad-blocker, click prima del primo paint):
  * il link funziona col suo behavior naturale, l'evento va perso.
@@ -38,7 +69,12 @@ type Options = {
 export function trackContactClick(href: string, opts: Options = {}) {
   return (e: MouseEvent<HTMLAnchorElement>) => {
     const gtag = typeof window !== "undefined" ? window.gtag : undefined;
-    const shouldTrack = typeof gtag === "function" && opts.reportConversion;
+    const isTelLink = href.startsWith("tel:");
+
+    const shouldTrack =
+      typeof gtag === "function" &&
+      !!opts.reportConversion &&
+      (!isTelLink || canPlaceCall());
 
     if (opts.newTab) {
       // La nuova tab si apre da sé: nessun preventDefault, evento in parallelo.
