@@ -8,9 +8,12 @@ import { siteConfig } from "@/config/site";
  * Incluso solo nelle rotte pubbliche del sito, NON nello Studio /studio.
  *
  * Espone su window:
- *  - gtag                       — funzione base
- *  - gtagSendEvent(url)         — helper "delayed nav" generico (ads_conversion_…)
- *  - gtag_report_conversion(url) — click-to-call conversion specifica (vale 1 EUR)
+ *  - gtag                        — funzione base
+ *  - gtag_report_conversion(url) — conversion click-to-call (1 EUR), helper
+ *                                  ufficiale Google con delayed navigation
+ *
+ * NB: l'unica azione di conversione attiva è AW-18233564262/zSweCIWxjL8cEOa4uPZD
+ * (vedi src/lib/track-contact.ts).
  */
 export function GoogleTag() {
   const id = siteConfig.googleTagId;
@@ -29,22 +32,6 @@ export function GoogleTag() {
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${id}');
-        `}
-      </Script>
-      <Script id="gtag-send-event" strategy="afterInteractive">
-        {`
-          window.gtagSendEvent = function (url) {
-            var callback = function () {
-              if (typeof url === 'string') {
-                window.location = url;
-              }
-            };
-            window.gtag('event', 'ads_conversion_Prenotazione_appuntamen_1', {
-              event_callback: callback,
-              event_timeout: 2000,
-            });
-            return false;
-          };
         `}
       </Script>
       <Script id="gtag-report-conversion" strategy="afterInteractive">

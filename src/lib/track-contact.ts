@@ -2,101 +2,59 @@
 
 import type { MouseEvent } from "react";
 
-/** Evento conversion generico Google Ads — sparato su ogni CTA contatto. */
-const EVENT_GENERIC = "ads_conversion_Prenotazione_appuntamen_1";
-
 /**
- * Conversion Google Ads sparate sui contatti "hot" (tel/whatsapp/email).
- * L'array è ordinato: la prima è quella storica click-to-call, le successive
- * sono conversion aggiuntive (nuove campagne Ads, remarketing, ecc.).
- * L'ULTIMA riceve il callback + timeout per il delayed navigation; le altre
- * sono fire-and-forget parallel.
+ * UNICA conversion Google Ads del sito.
+ *
+ * Prima ne sparavamo tre per click (un evento generico + due `conversion` con
+ * label diverse): se in Ads erano tutte contate come conversioni, un solo click
+ * reale ne valeva tre. Ora l'unica azione ufficiale è questa label.
  */
-const CONVERSIONS: Array<Record<string, unknown>> = [
-  {
-    send_to: "AW-18233564262/zSweCIWxjL8cEOa4uPZD",
-    value: 1.0,
-    currency: "EUR",
-  },
-  {
-    send_to: "AW-18233564262/77_7CKWhrdUcEOa4uPZD",
-    value: 1.0,
-    currency: "EUR",
-    transaction_id: "",
-  },
-];
+const CONVERSION = {
+  send_to: "AW-18233564262/zSweCIWxjL8cEOa4uPZD",
+  value: 1.0,
+  currency: "EUR",
+} as const;
 
 type Options = {
-  /** Se true: il link apre in nuova tab (target="_blank") — fire-and-forget eventi. */
+  /** Se true: il link apre in nuova tab (target="_blank") — fire-and-forget. */
   newTab?: boolean;
-  /** Se true: spara anche le conversion click-to-call/contact (vale 1 EUR ciascuna). */
+  /** Se true: spara la conversion. Se false, il link non genera eventi. */
   reportConversion?: boolean;
 };
 
 /**
- * onClick handler che spara conversion Google Ads quando l'utente clicca
- * un link di contatto, prima di seguire il link.
- *
- * Eventi sparati:
- *  - sempre: `ads_conversion_Prenotazione_appuntamen_1` (generico)
- *  - se reportConversion: tutte le conversion in CONVERSIONS[]
+ * onClick handler che spara la conversion Google Ads quando l'utente clicca
+ * un link di contatto (telefono / WhatsApp / email), prima di seguire il link.
  *
  * Navigazione:
- *  - tel: / mailto: / link same-tab → "delayed navigation" (callback sull'ULTIMA
- *    conversion o 2s timeout — così tutte fanno in tempo a partire)
- *  - link esterni target=_blank → nuova tab si apre subito, eventi fire-and-forget
+ *  - tel: / mailto: (same-tab) → "delayed navigation": naviga sul callback di
+ *    gtag, con timeout di sicurezza a 2s
+ *  - link esterni target=_blank → la nuova tab si apre subito col behavior
+ *    nativo (niente popup blocker), evento fire-and-forget
  *
- * Fallback se gtag non disponibile (ad-blocker, primo paint): link funziona col
- * suo behavior naturale, eventi persi.
+ * Fallback se gtag non è disponibile (ad-blocker, click prima del primo paint):
+ * il link funziona col suo behavior naturale, l'evento va perso.
  */
 export function trackContactClick(href: string, opts: Options = {}) {
   return (e: MouseEvent<HTMLAnchorElement>) => {
     const gtag = typeof window !== "undefined" ? window.gtag : undefined;
-
-    // 1) Evento generico — sempre, fire-and-forget
-    if (typeof gtag === "function") {
-      gtag("event", EVENT_GENERIC);
-    }
+    const shouldTrack = typeof gtag === "function" && opts.reportConversion;
 
     if (opts.newTab) {
-      // Link esterno con target=_blank: la nuova tab si apre col default behavior.
-      // Sparo le conversion in parallelo, senza preventDefault.
-      if (typeof gtag === "function" && opts.reportConversion) {
-        for (const conv of CONVERSIONS) {
-          gtag("event", "conversion", conv);
-        }
-      }
+      // La nuova tab si apre da sé: nessun preventDefault, evento in parallelo.
+      if (shouldTrack) gtag!("event", "conversion", CONVERSION);
       return;
     }
 
-    // Same-tab (tel: / mailto:) — delayed navigation
-    if (typeof gtag !== "function") {
-      return; // gtag non disponibile: lascia il default browser behavior
-    }
+    if (!shouldTrack) return; // niente da tracciare: default browser behavior
 
     e.preventDefault();
-    const navigate = () => {
-      window.location.href = href;
-    };
-
-    if (opts.reportConversion) {
-      // Sparo tutte le conversion, il callback è agganciato all'ULTIMA
-      // (così tutte le altre partono prima e non blocchiamo la nav > 2s).
-      for (let i = 0; i < CONVERSIONS.length; i++) {
-        const isLast = i === CONVERSIONS.length - 1;
-        gtag("event", "conversion", {
-          ...CONVERSIONS[i],
-          ...(isLast
-            ? { event_callback: navigate, event_timeout: 2000 }
-            : {}),
-        });
-      }
-    } else {
-      // Solo evento generico → uso quello per il delayed nav
-      gtag("event", EVENT_GENERIC, {
-        event_callback: navigate,
-        event_timeout: 2000,
-      });
-    }
+    gtag!("event", "conversion", {
+      ...CONVERSION,
+      event_callback: () => {
+        window.location.href = href;
+      },
+      event_timeout: 2000,
+    });
   };
 }
