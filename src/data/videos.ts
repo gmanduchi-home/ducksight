@@ -109,5 +109,6 @@ export const videos: Video[] = [
       en: "Hedge Magic — First Light to Sunset",
     },
     year: 2026,
+    poster: "/covers/hedge-magic.webp",
   },
 ];
