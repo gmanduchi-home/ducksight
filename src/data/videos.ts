@@ -91,4 +91,23 @@ export const videos: Video[] = [
     year: 2026,
     poster: "/covers/making-of.webp",
   },
+  {
+    youtubeId: "V9hBaiVTfjg",
+    type: "video",
+    title: {
+      it: "San Marino Photo Cosplay — Cosplayer POV",
+      en: "San Marino Photo Cosplay — Cosplayer POV",
+    },
+    year: 2026,
+    poster: "/covers/san-marino-cosplay.webp",
+  },
+  {
+    youtubeId: "lmAC8zjpu_E",
+    type: "video",
+    title: {
+      it: "Hedge Magic — First Light to Sunset",
+      en: "Hedge Magic — First Light to Sunset",
+    },
+    year: 2026,
+  },
 ];
